@@ -1,24 +1,18 @@
-import logo from './logo.svg';
+import React, {useState} from 'react';
+import SortingVisualizer  from './Visualizer/SortingVisualizer';
+import {Navbar} from "./navBar/nav-bar";
 import './App.css';
+import {GlobalsContext} from "./Context/GlobalContext";
 
 function App() {
+    const [speed,setSpeed] = useState("3")
+    const [len,setLen] = useState("70")
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <GlobalsContext.Provider
+    value={{setSpeed,speed,len,setLen}}>
+        <Navbar />
+        <SortingVisualizer/>
+    </GlobalsContext.Provider>
   );
 }
 
