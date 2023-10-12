@@ -1,12 +1,12 @@
-import React, {useContext} from "react";
+import React, { useContext } from "react";
 
-import {GlobalsContext} from "../Context/GlobalContext";
+import { GlobalsContext } from "../Context/GlobalContext";
 import './style.css';
 
 
 export const Navbar = () => {
 
-    const {speed, setSpeed, len, setLen} = useContext(GlobalsContext);
+    const { speed, setSpeed, len, setLen } = useContext(GlobalsContext);
 
     return (
         <nav>
@@ -23,23 +23,22 @@ export const Navbar = () => {
                             borderLeft: '1px solid white'
                         }}>
                             <p>Speed</p>
-
                             {/*<input type="range" min="0" max="10" onInput={e => this._rangeInput()} onChange={e => this._rangeChange(e)}/>*/}
-                            <p style={{fontSize : 12,marginTop: 20,marginLeft : 4,}}>{speed}</p>
+                            <p style={{ fontSize: 12, marginTop: 20, marginLeft: 4, }}>{10 - speed}</p>
                             <input
                                 className="slider__input_slider"
                                 type="range"
                                 min="1"
                                 max="10"
                                 step="0.8"
-                                value={10-speed}
+                                value={10 - speed}
                                 onChange={e => setSpeed(e.target.value)}
                             />
                         </li>
-                        <li style={{display: 'flex'}}>
+                        <li style={{ display: 'flex' }}>
                             <p>Array Size</p>
 
-                            <p style={{fontSize : 12,marginTop: 20,marginLeft : 4,}}>{len}</p>
+                            <p style={{ fontSize: 12, marginTop: 20, marginLeft: 4, }}>{len}</p>
                             <input
                                 className="slider__input_slider"
                                 type="range"
