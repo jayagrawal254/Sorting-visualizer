@@ -1,4 +1,6 @@
 import React, { useContext } from "react";
+import { GlobalsContext } from "../Context/GlobalContext";
+import './style.css';
 
 import { GlobalsContext } from "../Context/GlobalContext";
 import "./style.css";
