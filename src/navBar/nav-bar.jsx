@@ -32,7 +32,7 @@ export const Navbar = () => {
                                 min="1"
                                 max="10"
                                 step="0.8"
-                                value={speed}
+                                value={10-speed}
                                 onChange={e => setSpeed(e.target.value)}
                             />
                         </li>
